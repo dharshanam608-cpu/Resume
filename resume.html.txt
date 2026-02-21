@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Builder</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            width: 400px;
+            background: white;
+            padding: 20px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        input, textarea {
+            width: 100%;
+            margin: 5px 0;
+            padding: 8px;
+        }
+        button {
+            background: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .resume {
+            margin-top: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Resume Builder</h2>
+
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="text" id="email" placeholder="Enter Email">
+    <input type="text" id="phone" placeholder="Enter Phone">
+    <input type="text" id="education" placeholder="Enter Education">
+    <textarea id="skills" placeholder="Enter Skills"></textarea>
+
+    <button onclick="generateResume()">Generate Resume</button>
+
+    <div class="resume" id="output"></div>
+</div>
+
+<script>
+function generateResume() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var education = document.getElementById("education").value;
+    var skills = document.getElementById("skills").value;
+
+    document.getElementById("output").innerHTML =
+        "<h2>" + name + "</h2>" +
+        "<p><b>Email:</b> " + email + "</p>" +
+        "<p><b>Phone:</b> " + phone + "</p>" +
+        "<p><b>Education:</b> " + education + "</p>" +
+        "<p><b>Skills:</b> " + skills + "</p>";
+}
+</script>
+
+</body>
+</html>
